@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Hello view</title>
+</head>
+<body>
+<h1 th:text="${greeting}">Привет!</h1>
+
+<p>Серверное время:
+  <span th:text="${#temporals.format(time,'yyyy-MM-dd HH:mm:ss')}">
+     00:00:00
+   </span>
+</p>
+
+<form th:action="@{/hello-view}" method="post">
+  <input type="text" name="name" placeholder="Ваше имя"/>
+  <button type="submit">Сказать &laquo;привет&raquo;</button>
+</form>
+</body>
+</html>
